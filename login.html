@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <!-- Title -->
+  <title>Travel safe</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/core-img/favicon.png">
+
+  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Audiowide|Arvo|Exo|Kanit|Raleway|Shojumaru" rel="stylesheet">
+
+  <link rel="stylesheet" href="style1.css">
+  <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      $("a").on('click', function(event) {
+
+        if (this.hash !== "") {
+          event.preventDefault();
+
+
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function() {
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+  </script>
+  <STYLE>
+    .login {
+
+      display: none;
+
+    }
+
+    .conti {
+
+      display: none;
+
+    }
+
+    #upcoming {
+      background-image: url("img/bg-img/upcom.jpg");
+    }
+
+    #testinomial {
+      display: block;
+      margin-top: 10%;
+      margin-left: auto;
+      margin-right: auto;
+
+      width: 40%;
+
+    }
+
+    .blinking {
+      animation: blinkingText 1.5s infinite;
+    }
+
+    @keyframes blinkingText {
+      0% {
+        color: #fff;
+      }
+
+      49% {
+        color: #D23333;
+      }
+
+      50% {
+        color: #D23333;
+      }
+
+      99% {
+        color: #fff;
+      }
+
+      100% {
+        color: #fff;
+      }
+    }
+
+    .blinking1 {
+      animation: blinkingText1 1.5s infinite;
+    }
+
+    @keyframes blinkingText1 {
+      0% {
+        color: #000;
+      }
+
+      49% {
+        color: #D23333;
+      }
+
+      50% {
+        color: #D23333;
+      }
+
+      99% {
+        color: #000;
+      }
+
+      100% {
+        color: #000;
+      }
+    }
+
+    .parallax {
+      /* The image used */
+      background-image: url("img/bg-img/upcom.jpg");
+
+
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- ##### Header Area Start ##### -->
+  <header class="header-area">
+    <!-- Navbar Area -->
+    <div class="oneMusic-main-menu">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+            <!-- Nav brand -->
+            <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+
+            <!-- Menu -->
+            <div class="classy-menu">
+
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+
+              <div class="classynav">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+              <li><a id="button_login" onclick="login_func()">Login</a></li>
+                  <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+
+        </div>
+        </nav>
+      </div>
+    </div>
+    </div>
+  </header>
+
+
+  <!-- ##### Breadcumb Area Start ##### -->
+  <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/login.jpg);">
+    <div class="bradcumbContent">
+      <h2>
+        <font color="#000" style="font-family: 'Audiowide', cursive;">W E L C O M E</FONT>
+      </h2>
+    </div>
+  </section>
+  <!-- ##### Breadcumb Area End ##### -->
+
+  <!-- ##### Login Area Start ##### -->
+  <section class="login-area section-padding-100">
+
+
+
+
+
+
+
+    <div class="ak">
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="login-content">
+              <h3>
+                <font color="#000" style="font-family: 'Audiowide', cursive;">L O G I N</FONT>
+              </h3>
+              <!-- Login Form -->
+              <div class="login-form">
+
+                <div class="form-group">
+
+
+                  <div class="form-group">
+                    <label>Email address</label>
+                    <input type="text" id="email_login" class="form-control" required placeholder="Enter E-mail">
+                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password_login" class="form-control" required placeholder="Password">
+                  </div>
+
+
+                  <button type="submit" class="btn oneMusic-btn mt-30" id="button_log_in" onclick="login()">Login</button><br><br>
+                  <button type="submit" class="btn oneMusic-btn mt-30" id="button_register" onclick="register_fun()"><a href="register.html">Link to Registration</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <!-- <button type="submit" class="btn oneMusic-btn mt-30" id="button_contingent_register" onclick="contingent()">Contingent Registration</button> -->
+
+                </div>
+                <p id="demo"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+  </section>
+  <!-- ##### Login Area End ##### -->
+
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="col-12 col-md-6">
+        
+          <p class="copywrite-text"><a href="#">
+              Copyright &copy;<script>
+                document.write(new Date().getFullYear());
+              </script> All rights reserved
+          </p>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="footer-nav">
+            <ul>
+              <li>
+                <a href="index.html">Home</a></li>
+              <li><a href="#vision">Our Vision</a></li>
+              <li><a href="#archives"> Archives</a></li>
+              <li><a href="#upcoming">Upcoming Events</a></li>
+              <li><a id="button_login" onclick="login_func()">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area Start ##### -->
+  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+
+  <script src="js/bootstrap/popper.min.js"></script>
+
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+
+  <script src="js/plugins/plugins.js"></script>
+
+  <script src="js/active.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBWNL1t_OE7HTDUq89SVVinalMInLS0E98",
+      authDomain: "esummit-bc6c3.firebaseapp.com",
+      databaseURL: "https://esummit-bc6c3.firebaseio.com",
+      projectId: "esummit-bc6c3",
+      storageBucket: "esummit-bc6c3.appspot.com",
+      messagingSenderId: "750068514396"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script type="text/javascript" src="campus.js"></script>
+
+</body>
+
+</html>
