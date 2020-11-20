@@ -18,25 +18,7 @@
   <link rel="stylesheet" href="style1.css">
   <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-
-      $("a").on('click', function(event) {
-
-        if (this.hash !== "") {
-          event.preventDefault();
-
-
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function() {
-            window.location.hash = hash;
-          });
-        }
-      });
-    });
-  </script>
+ 
   <STYLE>
     .login {
 
@@ -116,18 +98,7 @@
       }
     }
 
-    .parallax {
-      /* The image used */
-      background-image: url("img/bg-img/upcom.jpg");
-
-
-
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    
   </style>
 </head>
 
@@ -196,31 +167,33 @@
         <div class="row justify-content-center">
           <div class="col-12 col-lg-8">
             <div class="login-content">
-              <h3><p> <b>For Login click here  </p><a href="login.html" id="button_login" onclick="login_func()"><button type="submit" class="btn oneMusic-btn mt-30""> Login</button></a><br><br>
+              <h3><p>Didn't book the ticket??</p><a href="https://www.irctc.co.in/nget/train-search"><button type="submit" class="btn oneMusic-btn mt-30""> Book Here</button></a><br><br>
   
-                <font color="#000" style="font-family: 'Audiowide', cursive;">R E G I S T E R</FONT>
+                <font color="#000" style="font-family: 'Audiowide', cursive;">Create New Journey</FONT>
               </h3>
                
               <!-- Login Form -->
               <div class="login-form" id="registration_form">
                 <form action="#" method="post">
                   <div class="form-group">
-                    <label>Name</label>
+                    <label>Full Name</label>
                     <input type="text" id="name" class="form-control" required placeholder="Enter Name">
                   </div>
 
                   <div class="form-group">
-                    <label>College</label><br>
-                    <input type="radio" onchange="collegeAdded()" name="college" id="college" checked required value="HBTU">&nbsp;&nbsp;HBTU<br>
-                    <input type="radio" onchange="collegeAdded()" name="college" id="college" required value="Other">&nbsp;&nbsp;Other<br>
+                    <label>Gender</label><br>
+                    <input type="radio" name="gender" id="gender">&nbsp;&nbsp;Male<br>
+                    <input type="radio"  name="gender" id="gender" required value="Other">&nbsp;&nbsp;Female<br>
                   </div>
-                  <div class="form-group" id="collegeName" style="display:none">
-                    <label>Name of the college</label>
-                    <input type="text" id="collegename" class="form-control" required placeholder="College Name">
+
+                  <div class="form-group" id="age">
+                    <label>Age</label>
+                    <input type="number" id="age" class="form-control" required placeholder="Enter your correct age">
                   </div>
-                  <div class="form-group" id="rollNumber">
-                    <label>Roll number</label>
-                    <input type="number" id="rollnumber" class="form-control" required placeholder="Enter your roll number like-1604510017">
+                  
+                  <div class="form-group" id="Aadhar">
+                    <label>AADHAR CARD</label>
+                    <input type="number" id="aadhar" class="form-control" required placeholder="Enter your AADHAR CARD Number">
                   </div>
 
                   <div class="form-group">
@@ -229,38 +202,39 @@
                     <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group" id="phone">
                     <label>Phone No.</label>
-                    <input type="number" id="phone" class="form-control" required placeholder="Enter Mobile No.">
+                    <input type="number" id="phone" class="form-control" required placeholder="Enter your 10-Digit Phone Number">
                   </div>
 
-                  <div class="form-group">
-                    <label>Create a Password</label>
-                    <input type="password" id="password" class="form-control" required placeholder="Password" pattern=".{6,}" title="password has to be minimum 6 characters long">
-                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>The password should be atleast 6 characters long</small>
+                  <div class="form-group" id="pnr">
+                    <label>PNR/TOKEN NO.</label>
+                    <input type="text" id="pnr" class="form-control" required placeholder="Enter the number here">
                   </div>
 
-                  <div class="form-group" id="accomodationForOthers" style="display:none" >
-                    <label>Accomodation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <!-- <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>Payment Links will be mailed to you soon.</small> -->
-                    <select id="accomodation" onchange="getValueIndi()" title="choose">
-                      <option value="yes">YES</option>
-                      <option value="no">NO</option>
-                    </select>
+                  <div class="form-group" id="from">
+                    <label>Boarding Station</label>
+                    <input type="text" id="from" class="form-control" required placeholder="Enter the city">
                   </div>
-                  <button type="submit"  class="btn oneMusic-btn mt-30" id="button_register_hbtu" onclick="checkHbtuStudentDetails()">Register</button><br><br>
-                  <!-- <button type="submit" class="btn oneMusic-btn mt-30" id="button_login" onclick="login_func()">Login</button> -->
-                  <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-                  <!-- <button type="submit" class="btn oneMusic-btn mt-30" id="button_register" onclick="contingent()">Contingent Registration</button> -->
 
-                    <!-- <div id="goback_button"><br></div> -->
+                  <div class="form-group" id="to">
+                    <label>Destination</label>
+                    <input type="text" id="from" class="form-control" required placeholder="Enter the city">
+                  </div>
+
+                  <div class="form-group" id="date">
+                    <label>Date of Travel</label>
+                    <input type="date" id="from" class="form-control" required placeholder="">
+                  </div>
+
+                
+
+                  
+                  <button type="submit"  class="btn oneMusic-btn mt-30" id="button_register_hbtu">Generate</button><br><br>
+                  
                   </a>
 
-                    <div style="display:none" id="accomodation_yes"><br>
-
-                      <script src="https://js.instamojo.com/v1/checkout.js"></script>
-
-                            </div>
+                    
 
 
                   
@@ -275,39 +249,7 @@
     </div>
     </div>
 
-    <div class="login" id="login">
-
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-8">
-            <div class="login-content">
-              <h3>
-                <font color="#000" style="font-family: 'Audiowide', cursive;">L O G I N</FONT>
-              </h3>
-              <!-- Login Form -->
-              <div class="login-form">
-
-                <div class="form-group">
-
-
-                  <div class="form-group">
-                    <label>Email address</label>
-                    <input type="text" id="email_login" class="form-control" required placeholder="Enter E-mail">
-                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="password_login" class="form-control" required placeholder="Password">
-                  </div>
-
-
-                  <button type="submit" class="btn oneMusic-btn mt-30" id="button_log_in" onclick="login()">Login</button><br><br>
-                  <button type="submit" class="btn oneMusic-btn mt-30" id="button_register" onclick="register_fun()">Link to Registration</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <!-- <button type="submit" class="btn oneMusic-btn mt-30" id="button_contingent_register" onclick="contingent()">Contingent Registration</button> -->
-
-                </div>
+    
                 <p id="demo"></p>
               </div>
             </div>
@@ -378,7 +320,7 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script type="text/javascript" src="campus.js"></script>
+  <script type="text/javascript" src="register.js"></script>
 
 </body>
 

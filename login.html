@@ -20,25 +20,7 @@
   <link rel="stylesheet" href="style1.css">
   <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-
-      $("a").on('click', function(event) {
-
-        if (this.hash !== "") {
-          event.preventDefault();
-
-
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function() {
-            window.location.hash = hash;
-          });
-        }
-      });
-    });
-  </script>
+ 
   <STYLE>
     .login {
 
@@ -164,7 +146,7 @@
               <div class="classynav">
                 <ul>
                   <li><a href="index.html">Home</a></li>
-              <li><a id="button_login" onclick="login_func()">Login</a></li>
+              <li><a>Login</a></li>
                   <li><a href="contactus.html">Contact Us</a></li>
                 </ul>
               </div>
@@ -207,9 +189,11 @@
                 <font color="#000" style="font-family: 'Audiowide', cursive;">L O G I N</FONT>
               </h3>
               <!-- Login Form -->
+
               <div class="login-form">
 
                 <div class="form-group">
+                  <form id="register">
 
 
                   <div class="form-group">
@@ -228,7 +212,7 @@
                   <button type="submit" class="btn oneMusic-btn mt-30" id="button_log_in" onclick="login()">Login</button><br><br>
                   <button type="submit" class="btn oneMusic-btn mt-30" id="button_register" onclick="register_fun()"><a href="register.html">Link to Registration</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
                   <!-- <button type="submit" class="btn oneMusic-btn mt-30" id="button_contingent_register" onclick="contingent()">Contingent Registration</button> -->
-
+                </form>
                 </div>
                 <p id="demo"></p>
               </div>
@@ -287,19 +271,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBWNL1t_OE7HTDUq89SVVinalMInLS0E98",
-      authDomain: "esummit-bc6c3.firebaseapp.com",
-      databaseURL: "https://esummit-bc6c3.firebaseio.com",
-      projectId: "esummit-bc6c3",
-      storageBucket: "esummit-bc6c3.appspot.com",
-      messagingSenderId: "750068514396"
-    };
-    firebase.initializeApp(config);
-  </script>
+  
   <script type="text/javascript" src="campus.js"></script>
 
 </body>
