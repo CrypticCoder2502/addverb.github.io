@@ -9,58 +9,30 @@ var firebaseConfig = {
     measurementId: "G-FRFEPCLRVX"
   };
   // Initialize Firebase
- 
-  firebase.initializeApp(config);
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
   
+ var database = firebase.database();
+ var ref = database.ref('addverb');
 
-// Reference messages collection
-  var messagesRef = firebase.database().ref('messages');
-  // Listen for form submit
-  document.getElementById('registration_form').addEventListener('submit', submitForm);
-  
- 
-  // Submit form
-  function submitForm(e){
-    e.preventDefault();
-     
-  var	name = getInputVal('name').value;
-  var	gender= getInputVal('gender').value;
-  var age = getInputVal('age').value;
-  var aadharcard = getInputVal('aadhar').value;
-  var email  = getInputVal('email').value;
-  var phone = getInputVal('phone').value;
-  var pnr = getInputVal('pnr').value;
-  var from = getInputVal('from').value;
-  var to = getInputVal('to').value;
-  var date = getInputVal('date').value;
-  
-    saveMessage(name, gender, age, aadharcard, email, phone, pnr. from, to, date);
-    
-  
+ function submitForm(){
 
-    document.getElementById('registration-form').reset();
-    
-   
+  console.log("Clicked");
 
-     
+  var data = {
+    name: document.getElementById('name1').value,
+    gender: document.getElementById('gender1').value,
+    age: document.getElementById('age1').value,
+    aadharcard: document.getElementById('aadhar1').value,
+    email: document.getElementById('email1').value,
+    phone:document.getElementById('phone1').value,
+    pnr: document.getElementById('pnr1').value,
+    from: document.getElementById('from1').value,
+    to: document.getElementById('to1').value,
+    date: document.getElementById('date1').value
   }
 
-  function getInputVal(id){
-    return document.getElementById(id).value;
-  }
-  
-  function saveMessage(name, gender, age, aadharcard, email, phone, pnr. from, to, date){
-    var newMessageRef = messagesRef.push();
-    newMessageRef.set({
-      name=name,
-       gender=gender,
-        age=age,
-         aadharcard=aadhar,
-          email=email,
-           phone=phone,
-            pnr=pnr.
-             from=from,
-              to=to, 
-              date=date
-    });
-  }
+  ref.push(data);
+
+
+ }
