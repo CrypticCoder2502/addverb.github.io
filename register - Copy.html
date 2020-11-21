@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+  <!-- Title -->
+  <title>Travel Safe</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/core-img/favicon.png">
+
+  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Audiowide|Arvo|Exo|Kanit|Raleway|Shojumaru" rel="stylesheet">
+
+  <link rel="stylesheet" href="style1.css">
+  <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+  
+  <script type="text/javascript" src="main.js"></script>
+  
+  <STYLE>
+    .login {
+
+      display: none;
+
+    }
+
+    .conti {
+
+      display: none;
+
+    }
+
+    #upcoming {
+      background-image: url("img/bg-img/upcom.jpg");
+    }
+
+    #testinomial {
+      display: block;
+      margin-top: 10%;
+      margin-left: auto;
+      margin-right: auto;
+
+      width: 40%;
+
+    }
+
+    .blinking {
+      animation: blinkingText 1.5s infinite;
+    }
+
+    @keyframes blinkingText {
+      0% {
+        color: #fff;
+      }
+
+      49% {
+        color: #D23333;
+      }
+
+      50% {
+        color: #D23333;
+      }
+
+      99% {
+        color: #fff;
+      }
+
+      100% {
+        color: #fff;
+      }
+    }
+
+    .blinking1 {
+      animation: blinkingText1 1.5s infinite;
+    }
+
+    @keyframes blinkingText1 {
+      0% {
+        color: #000;
+      }
+
+      49% {
+        color: #D23333;
+      }
+
+      50% {
+        color: #D23333;
+      }
+
+      99% {
+        color: #000;
+      }
+
+      100% {
+        color: #000;
+      }
+    }
+
+    
+  </style>
+</head>
+
+<body>
+
+
+  <!-- ##### Header Area Start ##### -->
+  <header class="header-area">
+    <!-- Navbar Area -->
+    <div class="oneMusic-main-menu">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+            <!-- Nav brand -->
+            <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+
+            <!-- Menu -->
+            <div class="classy-menu">
+
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+
+              <div class="classynav">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+              <li><a id="button_login" onclick="login_func()">Login</a></li>
+                  <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+
+        </div>
+        </nav>
+      </div>
+    </div>
+    </div>
+  </header>
+
+
+  <!-- ##### Breadcumb Area Start ##### -->
+  <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/login.jpg);">
+    <div class="bradcumbContent">
+      <h2>
+        <font color="#000" style="font-family: 'Audiowide', cursive;">W E L C O M E</FONT>
+      </h2>
+    </div>
+  </section>
+  <!-- ##### Breadcumb Area End ##### -->
+
+  <!-- ##### Login Area Start ##### -->
+  <section class="login-area section-padding-100">
+
+    
+    <div class="register" id="registration">
+      <div class="container">
+	  
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="login-content">
+              <h3><p>Didn't book the ticket??</p><a href="https://www.irctc.co.in/nget/train-search"><button type="submit" class="btn oneMusic-btn mt-30""> Book Here</button></a><br><br>
+  
+                <font color="#000" style="font-family: 'Audiowide', cursive;">Create New Journey</FONT>
+              </h3>
+               
+              <!-- Login Form -->
+             
+              <div class="login-form">
+                <form id="registration_form">
+                  <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" class="form-control" required placeholder="Enter Name">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Gender</label><br>
+                    <input type="radio" name="gender" id="gender">&nbsp;&nbsp;Male<br>
+                    <input type="radio"  name="gender" id="gender" required value="Other">&nbsp;&nbsp;Female<br>
+                  </div>
+
+                  <div class="form-group" id="age">
+                    <label>Age</label>
+                    <input type="number" id="age" class="form-control" required placeholder="Enter your correct age">
+                  </div>
+                  
+                  <div class="form-group" id="aadhar">
+                    <label>AADHAR CARD</label>
+                    <input type="number" id="aadhar" class="form-control" required placeholder="Enter your AADHAR CARD Number">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" id="email" class="form-control" required placeholder="Enter E-mail">
+                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
+                  </div>
+
+                  <div class="form-group" id="phone">
+                    <label>Phone No.</label>
+                    <input type="number" id="phone" class="form-control" required placeholder="Enter your 10-Digit Phone Number">
+                  </div>
+
+                  <div class="form-group" id="pnr">
+                    <label>PNR/TOKEN NO.</label>
+                    <input type="text" id="pnr" class="form-control" required placeholder="Enter the number here">
+                  </div>
+
+                  <div class="form-group" id="from">
+                    <label>Boarding Station</label>
+                    <input type="text" id="from" class="form-control" required placeholder="Enter the city">
+                  </div>
+
+                  <div class="form-group" id="to">
+                    <label>Destination</label>
+                    <input type="text" id="from" class="form-control" required placeholder="Enter the city">
+                  </div>
+
+                  <div class="form-group" id="date">
+                    <label>Date of Travel</label>
+                    <input type="date" id="from" class="form-control" required placeholder="">
+                  </div>
+
+                  <button type="submit"  class="btn oneMusic-btn mt-30" id="button_register_hbtu">Generate</button><br><br>
+                  
+                  </a>
+
+                </form>  
+
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    
+                <p id="demo"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+  </section>
+  <!-- ##### Login Area End ##### -->
+
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="col-12 col-md-6">
+          <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+          <p class="copywrite-text"><a href="#">
+              Copyright &copy;<script>
+                document.write(new Date().getFullYear());
+              </script> All rights reserved
+          </p>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="footer-nav">
+            <ul>
+              <li>
+               
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.1.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+ 
+  
+  <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
